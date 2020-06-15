@@ -1,3 +1,24 @@
-.col-md-4 {
-    border: 2px solid black;
+.col-md-4 div{
+    border: 1px solid #adadad;
+    margin-top: 2rem;
+    padding: 1rem;
 }
+
+.article {
+    /* border: 1px solid darkgray; */
+    margin-top: 2rem;
+    border-radius: 5px;
+
+}
+
+.Postauthor {
+    font-family: cursive;
+    font-weight: 300;
+    font-size: x-large;
+}
+
+.Postdate {
+    color: darkgray;
+}
+
+

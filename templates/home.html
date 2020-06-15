@@ -2,12 +2,13 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="article">
+        <div class="article border">
             <span class="Postauthor">{{ post.author }}</span>
             <span class="Postdate"> {{ post.date_pub }}</span>
-            <h1>{{ }}</h1>
+            <br>
+            <h3 class="border-top">{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
         </div>
     {% endfor %}
 {% endblock %}
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, mollitia?
