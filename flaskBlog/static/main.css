@@ -21,4 +21,12 @@
     color: darkgray;
 }
 
+.account-info{
+    display: flex;
+    justify-content: center;
+}
 
+.img-thumbnail.rounded-circle{
+    height: 200px;
+    width: 200px;
+}
