@@ -3,11 +3,14 @@
 {% block content %}
     {% for post in posts %}
         <div class="article border">
-            <span class="Postauthor">{{ post.author }}</span>
-            <span class="Postdate"> {{ post.date_pub }}</span>
-            <br>
-            <h3 class="border-top">{{ post.title }}</h3>
-            <p>{{ post.content }}</p>
+            <div class="post-metadata">
+                <img class="rounded-circle mt-1 ml-1" src="{{ url_for('static',filename='profile_pics/'+post.author.image_file) }}" alt="" id="post_img">
+                <span class="Postauthor ml-2"><a href="#">{{ post.author.username }}</a></span>
+                <span class="Postdate mr-1"> {{ post.date_posted.strftime('%d %b,%Y') }}</span>
+            </div>
+            <h3 class="mt-2 ml-2 mr-2"><a href="{{ url_for('post',post_id=post.id) }}">{{ post.title }}</a></h3>
+            <p class="ml-2">{{ post.content }}</p>
+            
         </div>
     {% endfor %}
 {% endblock %}

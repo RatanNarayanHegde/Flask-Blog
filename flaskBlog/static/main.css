@@ -1,20 +1,28 @@
+body{
+    background: #fafafa;
+}
+
+a{
+    color: inherit;
+}
 .col-md-4 div{
-    border: 1px solid #adadad;
     margin-top: 2rem;
     padding: 1rem;
+    background-color: #ffffff;
 }
 
 .article {
     /* border: 1px solid darkgray; */
     margin-top: 2rem;
-    border-radius: 5px;
+    background-color: #ffffff;
 
 }
 
 .Postauthor {
-    font-family: cursive;
+    font-family: sans-serif;
     font-weight: 300;
-    font-size: x-large;
+    
+    
 }
 
 .Postdate {
@@ -29,4 +37,18 @@
 .img-thumbnail.rounded-circle{
     height: 200px;
     width: 200px;
+}
+
+.post-metadata{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgray;
+    border-radius: 2px;
+    border-width: 80%;
+    
+}
+
+#post_img{
+
+    height: 50px;
+    width: 50px;
 }
