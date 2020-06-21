@@ -143,5 +143,6 @@ def user_posts(username):
     page_no = request.args.get('page',1,type=int)
     user = User.query.filter_by(username=username).first_or_404()
     posts= Post.query.filter_by(author=user).order_by(Post.date_posted.desc()).paginate(page=page_no,per_page=5)
-    return render_template('user_posts.html', posts=posts,user=user)
+    image_file = url_for('static',filename='profile_pics/'+ user.image_file)
+    return render_template('user_posts.html', posts=posts,user=user,image_file=image_file)
 
