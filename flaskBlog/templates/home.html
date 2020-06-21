@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    {% for post in posts %}
+    {% for post in posts.items %}
         <div class="article border">
             <div class="post-metadata">
                 <img class="rounded-circle mt-1 ml-1" src="{{ url_for('static',filename='profile_pics/'+post.author.image_file) }}" alt="" id="post_img">

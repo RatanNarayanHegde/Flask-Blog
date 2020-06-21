@@ -10,7 +10,8 @@ from PIL import Image
 
 @app.route("/")
 def home():
-    posts= Post.query.all()
+    page_no = request.args.get('page',1,type=int)
+    posts= Post.query.paginate(page=page_no,per_page=2)
     return render_template('home.html', posts=posts)
 
 
@@ -121,3 +122,16 @@ def update_post(post_id):
         form.title.data = post.title
 
     return render_template('create_post.html',title='Update Post',legend='Update Post',form=form)
+
+
+@app.route("/post/<int:post_id>/delete",methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if current_user.id != post.author.id :
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your Post has been deleted','success')
+    return redirect(url_for('home'))
+    
