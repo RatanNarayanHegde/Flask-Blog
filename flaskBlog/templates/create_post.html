@@ -3,7 +3,7 @@
 {% block content %}
 <form method="POST" action="">
     {{ form.hidden_tag() }}
-    <legend class="border-bottom mb-4 mt-2">Create Post</legend>
+    <legend class="border-bottom mb-4 mt-2">{{ legend }}</legend>
     <div class="form-group">
         {{ form.title.label(class="form-control-label") }}
         {% if form.title.errors %}
