@@ -52,3 +52,8 @@ a{
     height: 50px;
     width: 50px;
 }
+
+
+p#article-content {
+    white-space: pre-line;
+}

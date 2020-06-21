@@ -5,23 +5,23 @@
         <div class="article border">
             <div class="post-metadata">
                 <img class="rounded-circle mt-1 ml-1" src="{{ url_for('static',filename='profile_pics/'+post.author.image_file) }}" alt="" id="post_img">
-                <span class="Postauthor ml-2"><a href="{{ url_for('user_posts',username=post.author.username) }}">{{ post.author.username }}</a></span>
+                <span class="Postauthor ml-2"><a href="{{ url_for('users.user_posts',username=post.author.username) }}">{{ post.author.username }}</a></span>
                 <span class="Postdate mr-1"> {{ post.date_posted.strftime('%d %b,%Y') }}</span>
             </div>
-            <h3 class="mt-2 ml-2 mr-2"><a href="{{ url_for('post',post_id=post.id) }}">{{ post.title }}</a></h3>
+            <h3 class="mt-2 ml-2 mr-2"><a href="{{ url_for('posts.post',post_id=post.id) }}">{{ post.title }}</a></h3>
             <p class="ml-2">{{ post.content }}</p>
             
         </div>
     {% endfor %}
 
-    <nav aria-label="Page navigation example" class="mt-2">
+    <nav aria-label="Page navigation example" class="mt-2 d-flex justify-content-center">
         <ul class="pagination pagination-sm">
           {% for page_num in posts.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=1) %}
             {% if page_num %}
                 {% if page_num == posts.page %}
-                    <li class="page-item active"><a class="page-link" href="{{ url_for('home',page=page_num )}}">{{ page_num }} <span class="sr-only">(current)</span> </a></li>
+                    <li class="page-item active"><a class="page-link" href="{{ url_for('main.home',page=page_num )}}">{{ page_num }} <span class="sr-only">(current)</span> </a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="{{ url_for('home',page=page_num )}}">{{ page_num }}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ url_for('main.home',page=page_num )}}">{{ page_num }}</a></li>
                 {% endif %}
             {% else %}
             <li class="page-item">...</li>
