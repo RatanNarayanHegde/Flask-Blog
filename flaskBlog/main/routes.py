@@ -1,5 +1,5 @@
 
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, jsonify
 from flaskBlog.models import Post
 
 
@@ -18,6 +18,17 @@ def home():
 @main.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+
+@main.route("/api",methods=['GET'])
+def api():
+    result=[]
+    if 'name' in request.args:
+        result.append( {'text':'Hello' + str(request.args['name'])})
+    else:
+        result.append({'text':'Hello World!'})
+    return jsonify(result)
+       
 
 
 
