@@ -12,9 +12,9 @@
 
     <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
     {% if title %}
-    <title> Flask Blog-{{ title }}</title>
+    <title> StoryBook-{{ title }}</title>
     {% else %}
-    <title> Flask Blog</title>
+    <title> StoryBook</title>
     {% endif %}
 </head>
 
@@ -22,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('main.home') }}">Blog</a>
+            <a class="navbar-brand" href="{{ url_for('main.home') }}">StoryBook</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
